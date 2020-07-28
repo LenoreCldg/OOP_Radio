@@ -90,11 +90,19 @@ public class RadioTest {
         radio.setCurrentVolume(10);
         radio.increaseCurrentVolume();
         assertEquals(10,radio.getCurrentVolume());
+
+        radio.setCurrentVolume(9);
+        radio.increaseCurrentVolume();
+        assertEquals(10,radio.getCurrentVolume());
     }
 
     @Test
     public void shouldDecreaseCurrentVolume() {
         radio.setCurrentVolume(0);
+        radio.decreaseCurrentVolume();
+        assertEquals(0,radio.getCurrentVolume());
+
+        radio.setCurrentVolume(1);
         radio.decreaseCurrentVolume();
         assertEquals(0,radio.getCurrentVolume());
     }
