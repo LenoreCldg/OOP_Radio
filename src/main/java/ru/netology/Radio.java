@@ -16,6 +16,22 @@ public class Radio {
         this.minNumberRadioStation = minNumberRadioStation;
     }
 
+    public void switchNextRadioStation(){
+        if (currentRadioStation >= maxNumberRadioStation){
+            this.currentRadioStation = minNumberRadioStation;
+            return;
+        }
+        currentRadioStation++;
+    }
+
+    public void switchPreviousRadioStation(){
+        if (currentRadioStation <= minNumberRadioStation){
+            this.currentRadioStation = maxNumberRadioStation;
+            return;
+        }
+        currentRadioStation--;
+    }
+
 
     public int getCurrentRadioStation() {
         return currentRadioStation;

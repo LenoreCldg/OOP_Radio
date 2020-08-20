@@ -59,6 +59,10 @@ public class RadioTest {
         radio.setCurrentVolume(40);
         radio.increaseCurrentVolume();
         assertEquals(41,radio.getCurrentVolume());
+
+        radio.setCurrentVolume(100);
+        radio.increaseCurrentVolume();
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
@@ -67,8 +71,13 @@ public class RadioTest {
         radio.setCurrentVolume(40);
         radio.decreaseCurrentVolume();
         assertEquals(39,radio.getCurrentVolume());
+
+        radio.setCurrentVolume(0);
+        radio.decreaseCurrentVolume();
+        assertEquals(0, radio.getCurrentVolume());
     }
 
+    //возможность выставлять номер радиостанции с цифрового пульта (вводя числа 0 - 10)
     @Test
     public void shouldRemoteNumberRadioStation() {
         Radio radio = new Radio();
@@ -86,4 +95,19 @@ public class RadioTest {
         assertEquals(5, radio.getCurrentRadioStation());
     }
 
+    @Test
+    void switchNextRadioStation() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(10);
+        radio.switchNextRadioStation();
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+
+    @Test
+    void switchPreviousRadioStation() {
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(0);
+        radio.switchPreviousRadioStation();
+        assertEquals(10,radio.getCurrentRadioStation());
+    }
 }
