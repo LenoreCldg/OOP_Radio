@@ -14,30 +14,30 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldGetAndSetCurrentVolume() {
+    public void shouldGetAndSetCurrentVolumeSound() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(0);
-        assertEquals(0, radio.getCurrentVolume());
-        radio.setCurrentVolume(50);
-        assertEquals(50, radio.getCurrentVolume());
-        radio.setCurrentVolume(100);
-        assertEquals(100, radio.getCurrentVolume());
-        radio.setCurrentVolume(-1);
-        assertEquals(0, radio.getCurrentVolume());
-        radio.setCurrentVolume(110);
-        assertEquals(100, radio.getCurrentVolume());
+        radio.setCurrentVolumeSound(0);
+        assertEquals(0, radio.getCurrentVolumeSound());
+        radio.setCurrentVolumeSound(50);
+        assertEquals(50, radio.getCurrentVolumeSound());
+        radio.setCurrentVolumeSound(100);
+        assertEquals(100, radio.getCurrentVolumeSound());
+        radio.setCurrentVolumeSound(-1);
+        assertEquals(0, radio.getCurrentVolumeSound());
+        radio.setCurrentVolumeSound(110);
+        assertEquals(100, radio.getCurrentVolumeSound());
     }
 
     @Test
-    public void shouldGetAndSetMaxVolume() {
+    public void shouldGetAndSetMaxVolumeSound() {
         Radio radio = new Radio();
-        assertEquals(100, radio.getMaxVolume());
+        assertEquals(100, radio.getMaxVolumeSound());
     }
 
     @Test
-    public void shouldGetAndSetMinVolume() {
+    public void shouldGetAndSetMinVolumeSound() {
         Radio radio = new Radio();
-        assertEquals(0, radio.getMinVolume());
+        assertEquals(0, radio.getMinVolumeSound());
     }
 
     @Test
@@ -54,31 +54,22 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseCurrentVolume() {
+    public void shouldIncreaseCurrentVolumeSound() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(40);
-        radio.increaseCurrentVolume();
-        assertEquals(41,radio.getCurrentVolume());
-
-        radio.setCurrentVolume(100);
-        radio.increaseCurrentVolume();
-        assertEquals(100, radio.getCurrentVolume());
+        radio.setCurrentVolumeSound(40);
+        radio.increaseCurrentVolumeSound();
+        assertEquals(41,radio.getCurrentVolumeSound());
     }
 
     @Test
-    public void shouldDecreaseCurrentVolume() {
+    public void shouldDecreaseCurrentVolumeSound() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(40);
-        radio.decreaseCurrentVolume();
-        assertEquals(39,radio.getCurrentVolume());
-
-        radio.setCurrentVolume(0);
-        radio.decreaseCurrentVolume();
-        assertEquals(0, radio.getCurrentVolume());
+        radio.setCurrentVolumeSound(40);
+        radio.decreaseCurrentVolumeSound();
+        assertEquals(39,radio.getCurrentVolumeSound());
     }
 
-    //возможность выставлять номер радиостанции с цифрового пульта (вводя числа 0 - 10)
-    @Test
+     @Test
     public void shouldRemoteNumberRadioStation() {
         Radio radio = new Radio();
         int [] possibleNumberRadioStation = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -95,19 +86,4 @@ public class RadioTest {
         assertEquals(5, radio.getCurrentRadioStation());
     }
 
-    @Test
-    void switchNextRadioStation() {
-        Radio radio = new Radio();
-        radio.setCurrentRadioStation(10);
-        radio.switchNextRadioStation();
-        assertEquals(0, radio.getCurrentRadioStation());
-    }
-
-    @Test
-    void switchPreviousRadioStation() {
-        Radio radio = new Radio();
-        radio.setCurrentRadioStation(0);
-        radio.switchPreviousRadioStation();
-        assertEquals(10,radio.getCurrentRadioStation());
-    }
 }
