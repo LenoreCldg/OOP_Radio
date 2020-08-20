@@ -14,30 +14,30 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldGetAndSetCurrentVolumeSound() {
+    public void shouldGetAndSetCurrentVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolumeSound(0);
-        assertEquals(0, radio.getCurrentVolumeSound());
-        radio.setCurrentVolumeSound(50);
-        assertEquals(50, radio.getCurrentVolumeSound());
-        radio.setCurrentVolumeSound(100);
-        assertEquals(100, radio.getCurrentVolumeSound());
-        radio.setCurrentVolumeSound(-1);
-        assertEquals(0, radio.getCurrentVolumeSound());
-        radio.setCurrentVolumeSound(110);
-        assertEquals(100, radio.getCurrentVolumeSound());
+        radio.setCurrentVolume(0);
+        assertEquals(0, radio.getCurrentVolume());
+        radio.setCurrentVolume(50);
+        assertEquals(50, radio.getCurrentVolume());
+        radio.setCurrentVolume(100);
+        assertEquals(100, radio.getCurrentVolume());
+        radio.setCurrentVolume(-1);
+        assertEquals(0, radio.getCurrentVolume());
+        radio.setCurrentVolume(110);
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
-    public void shouldGetAndSetMaxVolumeSound() {
+    public void shouldGetAndSetMaxVolume() {
         Radio radio = new Radio();
-        assertEquals(100, radio.getMaxVolumeSound());
+        assertEquals(100, radio.getMaxVolume());
     }
 
     @Test
-    public void shouldGetAndSetMinVolumeSound() {
+    public void shouldGetAndSetMinVolume() {
         Radio radio = new Radio();
-        assertEquals(0, radio.getMinVolumeSound());
+        assertEquals(0, radio.getMinVolume());
     }
 
     @Test
@@ -54,19 +54,19 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseCurrentVolumeSound() {
+    public void shouldIncreaseCurrentVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolumeSound(40);
-        radio.increaseCurrentVolumeSound();
-        assertEquals(41,radio.getCurrentVolumeSound());
+        radio.setCurrentVolume(40);
+        radio.increaseCurrentVolume();
+        assertEquals(41,radio.getCurrentVolume());
     }
 
     @Test
-    public void shouldDecreaseCurrentVolumeSound() {
+    public void shouldDecreaseCurrentVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolumeSound(40);
-        radio.decreaseCurrentVolumeSound();
-        assertEquals(39,radio.getCurrentVolumeSound());
+        radio.setCurrentVolume(40);
+        radio.decreaseCurrentVolume();
+        assertEquals(39,radio.getCurrentVolume());
     }
 
      @Test
