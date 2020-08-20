@@ -3,10 +3,34 @@ package ru.netology;
 public class Radio {
     private int currentRadioStation;
     private int currentVolume;
-    private int maxNumberRadioStation = 9;
+    private int maxNumberRadioStation = 10;
     private int minNumberRadioStation = 0;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
+
+    public Radio() {
+    }
+
+    public Radio(int maxNumberRadioStation, int minNumberRadioStation) {
+        this.maxNumberRadioStation = maxNumberRadioStation;
+        this.minNumberRadioStation = minNumberRadioStation;
+    }
+
+    public void switchNextRadioStation(){
+        if (currentRadioStation >= maxNumberRadioStation){
+            this.currentRadioStation = minNumberRadioStation;
+            return;
+        }
+        currentRadioStation++;
+    }
+
+    public void switchPreviousRadioStation(){
+        if (currentRadioStation <= minNumberRadioStation){
+            this.currentRadioStation = maxNumberRadioStation;
+            return;
+        }
+        currentRadioStation--;
+    }
 
 
     public int getCurrentRadioStation() {
@@ -28,12 +52,16 @@ public class Radio {
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume < minVolume) {
-            return;
-        } else if (currentVolume > maxVolume) {
+            this.currentVolume = minVolume;
             return;
         }
-        this.currentVolume= currentVolume;
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
+        }
+        this.currentVolume = currentVolume;
     }
+
 
     public int getMaxNumberRadioStation() {
 
@@ -60,7 +88,7 @@ public class Radio {
         return maxVolume;
     }
 
-    public void setMaxVolume (int maxVolume) {
+    public void setMaxVolume(int maxVolume) {
 
         this.maxVolume = maxVolume;
     }
@@ -70,7 +98,7 @@ public class Radio {
         return minVolume;
     }
 
-    public void setMinVolume (int minVolume) {
+    public void setMinVolume(int minVolume) {
 
         this.minVolume = minVolume;
     }
